@@ -9,8 +9,12 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 class Product extends Model
 {
     use HasFactory;
+    protected $fillable = [
+        'name','detail','price','stock','discount',
+    ];
 
-    public function reviews(){
+    public function reviews()
+    {
         return $this->hasMany(Review::class);
     }
 }
